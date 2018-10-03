@@ -1,26 +1,35 @@
 // require("dotenv").config();
-
+var fs = require("fs");
+var axios = require("axios");
+var movieName = process.argv[2]
 //add the code required to import the keys.js file and store it in a variable
 // You should then be able to access your keys information like so
 
+function spotify(){
+var spotify = new Spotify(keys.spotify);
 
-//   var spotify = new Spotify(keys.spotify);
-
+spotify
+  .search({ type: 'track', query: 'All the Small Things' })
+  .then(function(response) {
+    console.log(response);
+  })
+  .catch(function(err) {
+    console.log(err);
+  });
+}
 // Make it so liri.js can take in one of the following commands:
 
+// // concert-this
+// // spotify-this-song
+// // movie-this
+// // do-what-it-says
 
 
-// concert-this
-// spotify-this-song
-// movie-this
-// do-what-it-says
-var axios = require("axios");
-
-var movieName = process.argv[2]
-
+function movie(inputs){
 var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
 
 console.log(queryUrl);
+
 if (movieName == ""){
   console.log("http://www.omdbapi.com/?t=" + Mr.Nobody + "&y=&plot=short&apikey=trilogy")
   console.log(response.data)
@@ -40,8 +49,9 @@ axios.get(queryUrl).then(
     }
   
 );
+  }
 
-var fs = require("fs");
+
 
 fs.readFile("random.txt", "utf8", function(error, data) {
 
@@ -51,11 +61,13 @@ fs.readFile("random.txt", "utf8", function(error, data) {
   }
 
   // We will then print the contents of data
-  console.log(data);
+  else {
+    console.log(data);
 
   // Then split it by commas (to make it more readable)
   var dataArr = data.split(",");
 
   // We will then re-display the content as an array for later use.
   console.log(dataArr);
+  } 
 });
