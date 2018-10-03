@@ -1,9 +1,19 @@
 // require("dotenv").config();
 var fs = require("fs");
 var axios = require("axios");
-var movieName = process.argv[2]
+var inputs = process.argv[2]
 //add the code required to import the keys.js file and store it in a variable
 // You should then be able to access your keys information like so
+switch(inputs){
+  case "concert-this":
+    break;
+  case "spotify-this-song":
+    break;
+  case "movie-this":
+    break;
+  case "do-what-this-says":
+    break;
+}
 
 function spotify(){
 var spotify = new Spotify(keys.spotify);
@@ -17,12 +27,6 @@ spotify
     console.log(err);
   });
 }
-// Make it so liri.js can take in one of the following commands:
-
-// // concert-this
-// // spotify-this-song
-// // movie-this
-// // do-what-it-says
 
 
 function movie(inputs){
