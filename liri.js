@@ -8,8 +8,10 @@ switch(inputs){
   case "concert-this":
     break;
   case "spotify-this-song":
+      spotify();
     break;
   case "movie-this":
+      movie();
     break;
   case "do-what-this-says":
     break;
@@ -29,7 +31,7 @@ spotify
 }
 
 
-function movie(inputs){
+function movie(){
 var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
 
 console.log(queryUrl);
